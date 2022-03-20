@@ -12,9 +12,12 @@ class App extends Component {
     }
     // fetching the GET route from the Express server which matches the GET route from server.js
     callBackendAPI = async () => {
-        const response = await fetch('/express_backend');
-        const body = await response.json();
-        console.log(body.express.response)
+        try {
+            const res = await fetch('/express_backend');
+            console.log('json', res)
+          } catch (err) {
+            console.error('err', err);
+          }
     };
 
     render() {
