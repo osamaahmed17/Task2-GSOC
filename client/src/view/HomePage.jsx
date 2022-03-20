@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import StockQuery from '../component/StockQuery' // For Getting StockQuery Component (Main Form And Button) and Getting Stock Price
+import StockQuery from '../component/StockQuery'
 import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css/dist/js/materialize.min.js';
 
@@ -21,7 +21,7 @@ class HomePage extends Component {
 stock symbol and how often to refresh the value, and the application should look for it on some publicly
 available sources, displaying the value and a green up arrow (respectively a red down arrow) if the value
 went up (respectively down) compared to last update.</p>
-
+ {/* For Getting StockQuery Component (Main Form And Button) and Getting Stock Price */}
         <StockQuery></StockQuery>
       </div>
 
