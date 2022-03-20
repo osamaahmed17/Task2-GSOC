@@ -1,0 +1,30 @@
+{
+    "name": "task-2",
+    "version": "1.0.0",
+    "description": "Stock Market Tracker for CERN GSOC Challenge",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node app.js",
+        "heroku-postbuild": "cd client && npm install && npm run build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/osamaahmed17/Task2-GSOC.git"
+    },
+    "author": "Osama Ahmed Tahir",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/osamaahmed17/Task2-GSOC/issues"
+    },
+    "homepage": "https://github.com/osamaahmed17/Task2-GSOC#readme",
+    "dependencies": {
+        "express": "^4.17.3",
+        "nodemon": "^2.0.15",
+        "path": "^0.12.7",
+        "yahoo-stock-api": "^1.1.3"
+    },
+    "engines": {
+        "node": "14.x"
+    }
+}
