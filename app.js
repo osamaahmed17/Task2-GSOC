@@ -11,12 +11,8 @@ async function stockDetail()  {
 
 
 var app = express();
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname + '/client/build/index.html'));
-});
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/express_backend', async (req, res) => {
     async function stockHistory()  {
@@ -28,6 +24,11 @@ app.get('/express_backend', async (req, res) => {
    res.send({ express: stockHistory });
 
 });
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + '/client/build/index.html'));
+});
+
+
 
 
 
