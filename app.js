@@ -1,37 +1,13 @@
 var express = require("express");
-const path = require('path');
-const yahooStockAPI  = require('yahoo-stock-api');
-
-
-
-async function stockDetail()  {
-	return await  yahooStockAPI.getSymbol('AAPL');
-}
-
-
-
+var path = require("path");
+var routes = require("./route/routes")
 var app = express();
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/express_backend', async (req, res) => {
-    async function stockHistory()  {
-        const startDate = new Date('08/21/2020');
-        const endDate = new Date('08/26/2020');
-        return await yahooStockAPI.getHistoricalPrices(startDate, endDate, 'AAPL', '1d');
-    }
-   var stockHistory = await stockHistory();
-   res.send({ express: stockHistory });
-
-});
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
-
-
-
-
-
 
 //Server Setup
 if (process.env.PORT) {
@@ -43,3 +19,7 @@ if (process.env.PORT) {
         console.log("Server is running");
     });
 }
+
+routes(app)
+
+module.exports = app
