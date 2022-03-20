@@ -1,9 +1,7 @@
-const stockHistoryController = require("../controller/stockHistoryController");
 const stockDetailController = require("../controller/stockDetailController");
 
-
+// Post Routes For Stock Details
 module.exports =(app) => {
-    app.get(`/postHistoryStock`,stockHistoryController.postHistoryStock);
-    app.get(`/postDetailStock`,stockDetailController.postDetailStock);
+    app.post(`/postDetailStock`,stockDetailController.postDetailStock);
 };
 
